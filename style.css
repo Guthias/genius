@@ -1,0 +1,98 @@
+html, body{
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+.container{
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  flex-direction: column;
+  background-color: #191919;
+}
+
+.points-area {
+  color: white;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 25px;
+}
+
+.buttons-area {
+  margin-top: 40px;
+}
+.start-button {
+  background-color: #188f1e;
+  border-radius: 20px;
+  border: 0;
+  font-size: 22px;
+  width: 300px;
+  cursor: pointer;
+  color: #ffffff;
+  padding: 15px 20px;
+  text-transform: uppercase;
+  font-weight: 700;
+
+  transition: all ease-in-out 0.2s;
+}
+.start-button:hover{
+  background-color: #0f7214;
+}
+/* Genius */
+.genius {
+  width: 500px;
+  height: 500px;
+  min-width: 500px;
+  min-height: 500px;
+
+  border-radius: 100%;
+  overflow: hidden;
+
+  display: flex;
+  flex-wrap: wrap;
+}
+.color {
+  display: inline-block;
+  width: 250px;
+  height: 250px;
+  cursor: pointer;
+}
+
+/* Cores do jogo */
+#color-1{
+  background-color: #e4ac05;
+}
+#color-1:hover{
+  background-color: #f7c941;
+}
+
+#color-2{
+  background-color: #f0205b;
+}
+#color-2:hover{
+  background-color: #ec5f87;
+}
+
+#color-3{
+  background-color: #1d6e9c;
+}
+#color-3:hover{
+  background-color: #388ec0;
+}
+
+#color-4{
+  background-color: #288362;
+}
+#color-4:hover{
+  background-color: #4dbe95;
+}
