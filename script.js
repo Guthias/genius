@@ -15,3 +15,14 @@ function generateNextColor () {
   const nextColor = 1 + Math.floor(Math.random() * 4);
   colorsOrder.push(nextColor);
 }
+
+color1.addEventListener('click', (event) => pressColor(event.target.id));
+color2.addEventListener('click', (event) => pressColor(event.target.id));
+color3.addEventListener('click', (event) => pressColor(event.target.id));
+color4.addEventListener('click', (event) => pressColor(event.target.id));
+
+function pressColor(cor){
+  let colorNumber = cor.replace('color-', '')
+  //return colorNumber;
+  console.log(colorNumber);
+}
