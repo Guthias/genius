@@ -18,8 +18,13 @@ color1.addEventListener('click', pressColor);
 color2.addEventListener('click', pressColor);
 color3.addEventListener('click', pressColor);
 color4.addEventListener('click', pressColor);
+startButton.addEventListener('click', startGame)
 
 function pressColor(event){
+  if (!gameStarted) { //Invalidar cliques caso o jogo não tenha começado
+    return
+  }
+
   let colorNumber = event.target.id.replace('color-', '')  
   selectedClass(colorNumber);
   movesOrder.push(colorNumber);
@@ -64,4 +69,13 @@ function checkMoves() {
   return true
 }
 
-round();
+let gameStarted = false;
+
+function startGame() {
+  gameStarted = !gameStarted;
+
+  colorsOrder = [];
+  movesOrder = [];
+
+  round();
+}
