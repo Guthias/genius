@@ -9,11 +9,9 @@ const points = document.getElementById('point-span');
 
 // Gerando ordem das cores
 
-let colorsOrder = [];
-
 function generateNextColor () {
   const nextColor = 1 + Math.floor(Math.random() * 4);
-  colorsOrder.push(nextColor);
+  return nextColor.toString();
 }
 
 color1.addEventListener('click', pressColor);
@@ -24,13 +22,18 @@ color4.addEventListener('click', pressColor);
 function pressColor(event){
   let colorNumber = event.target.id.replace('color-', '')  
   selectedClass(colorNumber);
-  //return colorNumber;
-  console.log(colorNumber);
+  movesOrder.push(colorNumber);
+  if (checkMoves()) { // Se todos os movimentos até o momento estiverem certos
+    if (movesOrder.length === colorsOrder.length) { // Se todos movimentos tiverem sido feitos
+      round();
+    }
+  } else {
+    alert('Você perdeu');
+  }
 }
 
 function selectedClass (color) {
   let element = document.getElementById(`color-${color}`)
-  //console.log(color);
   element.classList.add('selected');
   setTimeout(() => {element.classList.remove('selected');}, 800)
 }
@@ -41,4 +44,24 @@ function showMoves (array){
     setTimeout( () => selectedClass(array[i]), 1000 * i);
   }
 }
-showMoves([1, 2, 3, 4, 4, 3, 2, 1]);
+//showMoves([1, 2, 3, 4, 4, 3, 2, 1]);
+
+let colorsOrder = [];
+let movesOrder = [];
+
+function round(){
+  movesOrder = [];
+  colorsOrder.push(generateNextColor());
+  showMoves(colorsOrder);
+}
+
+function checkMoves() {
+  for (let i = 0; i < movesOrder.length; i+=1){
+    if (movesOrder[i] !== colorsOrder[i]){
+      return false
+    }
+  }
+  return true
+}
+
+round();
