@@ -33,7 +33,7 @@ function pressColor(event){
       round();
     }
   } else {
-    alert('Você perdeu');
+    loseGame();
   }
 }
 
@@ -74,7 +74,7 @@ let gameStarted = false;
 let currentPoints = 0;
 
 function startGame() {
-  gameStarted = !gameStarted;
+  gameStarted = true;
   restartPoints();
   colorsOrder = [];
   movesOrder = [];
@@ -90,4 +90,9 @@ function sumPoints (){
 function restartPoints (){
   currentPoints = 0;
   points.innerText = `Pontos: ${currentPoints}`
+}
+
+function loseGame() {
+  gameStarted = false;
+  alert(`Você perdeu e fez um total de ${currentPoints} pontos`);
 }
