@@ -66,16 +66,28 @@ function checkMoves() {
       return false
     }
   }
+  sumPoints();
   return true
 }
 
 let gameStarted = false;
+let currentPoints = 0;
 
 function startGame() {
   gameStarted = !gameStarted;
-
+  restartPoints();
   colorsOrder = [];
   movesOrder = [];
 
   round();
+}
+
+function sumPoints (){
+  currentPoints += 1;
+  points.innerText = `Pontos: ${currentPoints}`
+}
+
+function restartPoints (){
+  currentPoints = 0;
+  points.innerText = `Pontos: ${currentPoints}`
 }
