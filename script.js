@@ -96,5 +96,5 @@ function startGame() {
 
 function loseGame() {
   gameStarted = false;
-  alert(`Você perdeu e fez um total de ${currentPoints} pontos`);
+  points.innerText = `Você perdeu e fez um total de ${currentPoints} pontos`
 }
