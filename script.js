@@ -41,7 +41,7 @@ function selectedClass (color) {
 // Source: https://stackoverflow.com/questions/24293376/javascript-for-loop-with-timeout
 function showMoves (array){
   for (let i = 0; i < array.length; i+=1){
-    setTimeout( () => selectedClass(array[i]), 1000 * i);
+    setTimeout( () => selectedClass(array[i]), 1000 + (1000 * i));
   }
 }
 //showMoves([1, 2, 3, 4, 4, 3, 2, 1]);
