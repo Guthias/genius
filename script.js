@@ -87,6 +87,8 @@ function restartPoints (){
 
 function startGame() {
   gameStarted = true;
+  startButton.innerText = 'Reiniciar';
+
   restartPoints();
   colorsOrder = [];
   movesOrder = [];
