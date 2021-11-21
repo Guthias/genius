@@ -16,13 +16,19 @@ function generateNextColor () {
   colorsOrder.push(nextColor);
 }
 
-color1.addEventListener('click', (event) => pressColor(event.target.id));
-color2.addEventListener('click', (event) => pressColor(event.target.id));
-color3.addEventListener('click', (event) => pressColor(event.target.id));
-color4.addEventListener('click', (event) => pressColor(event.target.id));
+color1.addEventListener('click', pressColor);
+color2.addEventListener('click', pressColor);
+color3.addEventListener('click', pressColor);
+color4.addEventListener('click', pressColor);
 
-function pressColor(cor){
-  let colorNumber = cor.replace('color-', '')
+function pressColor(event){
+  let colorNumber = event.target.id.replace('color-', '')  
+  selectedClass(event.target);
   //return colorNumber;
   console.log(colorNumber);
+}
+
+function selectedClass (element) {
+  element.classList.add('selected');
+  setTimeout(() => {element.classList.remove('selected');}, 800)
 }

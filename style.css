@@ -72,27 +72,27 @@ html, body{
 #color-1{
   background-color: #e4ac05;
 }
-#color-1:hover{
+#color-1.selected{
   background-color: #f7c941;
 }
 
 #color-2{
   background-color: #f0205b;
 }
-#color-2:hover{
+#color-2.selected{
   background-color: #ec5f87;
 }
 
 #color-3{
   background-color: #1d6e9c;
 }
-#color-3:hover{
+#color-3.selected{
   background-color: #388ec0;
 }
 
 #color-4{
   background-color: #288362;
 }
-#color-4:hover{
+#color-4.selected{
   background-color: #4dbe95;
 }
